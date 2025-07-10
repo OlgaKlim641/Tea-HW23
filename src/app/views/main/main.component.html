@@ -1,0 +1,55 @@
+
+
+
+
+<section class="container-sm">
+  <div class="slider pt-5 mt-4">
+    <div class="">
+      <img class="h-auto w-100" src="./assets/images/banner1.png" alt="tea table1">
+    </div>
+  </div>
+</section>
+
+<section class="container  mb-5">
+  <div class="questions justify-content-center px-3 row">
+    <h1 class="text-center mb-4 mt-4">Ответы на часто задаваемые вопросы</h1>
+    <div class="col-12 accordion" id="accordion">
+      <h3 class="bg-primary text-white border-0 rounded-4 p-4 fw-bold mb-3">Собираете ли вы подарочные боксы?</h3>
+      <div class="border-0">
+        <p>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </p>
+      </div>
+      <h3 class="bg-primary text-white border-0 rounded-4 p-4 fw-bold mb-3">Сколько у вас разновидностей чая?</h3>
+      <div class="border-0">
+        <p>
+          На данный момент 10. Коллекция постоянно пополняется.
+        </p>
+      </div>
+      <h3 class="bg-primary text-white border-0 rounded-4 p-4 fw-bold mb-3">В какой срок осуществляется доставка?</h3>
+      <div class="border-0">
+        <p>
+          В течении 2 рабочих дней.
+        </p>
+      </div>
+      <h3 class="bg-primary text-white border-0 rounded-4 p-4 fw-bold mb-3">У вас обновляется ассортимент?</h3>
+      <div class="border-0">
+        <p>
+          Да. Раз в 2 недели.
+        </p>
+      </div>
+      <h3 class="bg-primary text-white border-0 rounded-4 p-4 fw-bold mb-3">Какого объема у вас пачки чая?</h3>
+      <div class="border-0">
+        <p>
+          Пачки весом 100 гр
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="isPopup" class="popup" (click)="closePopup()">
+  <span class="close" (click)="closePopup()">&times;</span>
+  <span class="popup-text">Посмотрите наши чайные коллекции</span>
+  <a routerLink="catalog" class="popup-btn">Смотреть</a>
+</div>

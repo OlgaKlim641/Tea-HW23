@@ -1,0 +1,28 @@
+<section class="mt-5 pt-4 catalog">
+  <div class="container">
+    <h1 class="text-center mb-4">{{ catalogTitle }}</h1>
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-4 mb-3 sm-1" *ngFor="let product of products">
+        <div class="card">
+          <img [src]="product.image" class="card-img-top" [alt]="product.title">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">{{ product.description | truncateText }}</p>
+            <div class="btn-block">
+            <button class="btn btn-primary hvr-grow-shadow" (click)="learnMore(product)">Подробнее</button>
+            <div class="price">Цена: {{ product.price }} руб</div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isLoading" class="loader">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Загрузка...</span>
+    </div>
+  </div>
+</section>
+
+

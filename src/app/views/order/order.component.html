@@ -1,0 +1,89 @@
+<section class="container mb-5">
+  <div class="row  mt-2">
+    <div class="col-1 col-md-2 col-lg-3"></div>
+    <div class="col-10 col-md-8 col-lg-6">
+      <h1 class="order-title text-center pb-4 pt-4">Сделать заказ</h1>
+      <form class="row g-4 mb-5" [formGroup]="orderForm" (ngSubmit)="onSubmit()"  *ngIf="isShowForm">
+        <div class="col-12">
+          <label for="product" class="form-label">Товар</label>
+          <input type="text" formControlName="product"
+                 class="form-control" id="inputProduct" readonly>
+          <div
+            *ngIf="orderForm.get('product')?.invalid && (orderForm.get('product')?.dirty || orderForm.get('product')?.touched)">
+            <small class="text-danger">Пожалуйста, введите наименование товара.</small>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="inputName" class="form-label">Имя</label>
+          <input type="text" formControlName="name"
+                 class="form-control" id="inputName">
+          <div
+            *ngIf="orderForm.get('name')?.invalid && (orderForm.get('name')?.dirty || orderForm.get('name')?.touched)">
+            <small class="text-danger">Пожалуйста, введите корректное имя.</small>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="inputLastName" class="form-label">Фамилия</label>
+          <input type="text" formControlName="last_name"
+                 class="form-control" id="inputLastName">
+          <div
+            *ngIf="orderForm.get('last_name')?.invalid && (orderForm.get('last_name')?.dirty || orderForm.get('last_name')?.touched)">
+            <small class="text-danger">Пожалуйста, введите корректную фамилию.</small>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <label for="inputPhone" class="form-label">Телефон</label>
+          <input type="text" formControlName="phone"
+                 class="form-control" id="inputPhone">
+          <div
+            *ngIf="orderForm.get('phone')?.invalid && (orderForm.get('phone')?.dirty || orderForm.get('phone')?.touched)">
+            <small class="text-danger">Пожалуйста, введите номер телефона.</small>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="inputCountry"
+                 class="form-label">Страна</label>
+          <input type="text" class="form-control" formControlName="country"
+                 id="inputCountry">
+          <div
+            *ngIf="orderForm.get('country')?.invalid && (orderForm.get('country')?.dirty || orderForm.get('country')?.touched)">
+            <small class="text-danger">Пожалуйста, введите страну.</small>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="inputIndex" class="form-label">Индекс</label>
+          <input type="text" formControlName="zip"
+                 class="form-control" id="inputIndex">
+          <div
+            *ngIf="orderForm.get('zip')?.invalid && (orderForm.get('zip')?.dirty || orderForm.get('zip')?.touched)">
+            <small class="text-danger">Пожалуйста, введите индекс.</small>
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Адрес</label>
+          <input type="text" formControlName="address"
+                 class="form-control" id="inputAddress">
+          <div
+            *ngIf="orderForm.get('address')?.invalid && (orderForm.get('address')?.dirty || orderForm.get('address')?.touched)">
+            <small class="text-danger">Пожалуйста, введите адрес.</small>
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="comment" class="form-label">Комментарий к заказу</label>
+          <input type="text" formControlName="comment"
+                 class="form-control" id="comment">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary hvr-grow-shadow" [disabled]="orderForm.invalid || isDisabled">Отправить</button>
+          <div class="error-message ml-30 text-danger" *ngIf="isShowError">Произошла ошибка. Попробуйте еще раз</div>
+        </div>
+      </form>
+      <div class="order-thanks" id="order-thanks"  *ngIf="isShowMessage">
+        <h2 class="text-center">Спасибо за заказ. Мы свяжемся с вами в ближайшее время!</h2>
+
+      </div>
+    </div>
+    <div class="col-1 col-md-2 col-lg-3"></div>
+  </div>
+</section>
+
