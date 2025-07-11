@@ -10,6 +10,7 @@ import {ProductsModule} from "./views/products/products.module";
 import {SharedModule} from "./shared/shared.module";
 import {FooterComponent} from "./shared/layout/footer/footer.component";
 import {HeaderComponent} from "./shared/layout/header/header.component";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -29,6 +30,7 @@ import {HeaderComponent} from "./shared/layout/header/header.component";
     OrderModule,
     SharedModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
